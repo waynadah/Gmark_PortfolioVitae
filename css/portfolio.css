@@ -1,0 +1,617 @@
+:root {
+    --clr-neon-dark: hsl(317, 81%, 27%);
+    --clr-neon: hsl(317 100% 54%);
+    --bg-black: #0f0f0f;
+    --bg-dark: #161616;
+    --white: white;
+}
+
+.neon-button {
+    font-weight: bolder;
+    font-size: 0.8rem;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 8px 10px;
+    border-radius: 2em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    position: relative;
+}
+
+.neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    border-radius: 2em;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+    color: var(--clr-bg);
+    text-shadow: none;
+    background-color: var(--clr-neon);
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+    opacity: 1;
+}
+
+.neon-button:hover::after,
+.neon-button:focus::after {
+    opacity: 1;
+}
+
+body {
+    font-family: "Balsamiq Sans", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-black);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 60%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.head-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    width: 100%;
+    height: 65px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Optional: for better contrast */
+}
+
+.head-nav .head-title {
+    font-weight: bolder;
+    font-size: 18px;
+    margin: 0;
+    color: var(--white);
+}
+.head-nav button {
+    display: none;
+}
+.head-nav-list {
+    padding: 1em;
+    padding-right: 2.5rem;
+}
+.head-nav-list a:active {
+    box-shadow: 0 0 15px var(--clr-neon), 0 0 25px var(--clr-neon);
+    border-radius: 10px;
+}
+span {
+    color: var(--clr-neon);
+}
+
+.nav-a {
+    color: var(--white);
+    padding: 8px 10px;
+    text-decoration: none;
+}
+
+.nav-a:hover {
+    color: var(--clr-neon);
+}
+
+#profile {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://wallpaperaccess.com/full/4230684.jpg");
+    background-position: 45% -2%;
+    background-size: 70%;
+    padding-top: 100px;
+    color: var(--white);
+}
+
+#profile h1 {
+    font-size: 60px;
+}
+
+#profile img {
+    display: block;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    filter: brightness(0.9) contrast(1.1);
+    transition: 0.5s all;
+    border: 1px;
+    border-radius: 1%;
+}
+
+#profile img:hover {
+    margin-top: 50px;
+    border-radius: 50%;
+    transform: scale(1.2) rotate(5deg);
+    background: var(--bg-dark);
+    box-shadow: 0 0 15px var(--clr-neon-dark), 0 0 25px var(--clr-neon-dark);
+    border: 5px double var(--clr-neon-dark);
+    z-index: 1;
+    border-radius: 200px 100px / 70% 19%;
+}
+
+#profile .email-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#profile .email-container input[type="email"] {
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+#profile .email-container button {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#profile .email-container button:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+#portfolio {
+    padding-top: 60px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+#portfolio .wrapper {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    height: 270px;
+    overflow: hidden;
+    transition: height 0.7s ease;
+}
+
+#portfolio .wrapper:hover {
+    transform: scale(0.98);
+    height: max-content;
+}
+
+#portfolio h3 {
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+}
+
+#portfolio h3::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    box-shadow: inset 0 0 0.5em 0 transparent, 0 0 0.5em 0 var(--clr-neon);
+    background: linear-gradient(
+        90deg,
+        var(--clr-neon) 0%,
+        var(--clr-neon) 40%,
+        var(--white) 60%,
+        var(--white) 100%
+    );
+    transition: width 2.2s ease, left 2.2s ease;
+}
+
+#portfolio:hover h3::after {
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    width: 100%;
+    left: 0;
+}
+#portfolio .wrapper .row {
+    margin: 8% 0;
+}
+
+#portfolio .card {
+    flex: 1;
+    height: 100%;
+    transition: 0.5s all;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.card1 {
+    background-color: #372442;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+.card2 {
+    background-color: #572758;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+.card4 {
+    background-color: #572758;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+.card3 {
+    background-color: #372442;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+#portfolio img {
+    width: 100%;
+    height: max-content;
+}
+#portfolio .card:hover {
+    flex: 4;
+}
+#portfolio .card:hover h4 {
+    top: 0;
+    position: fixed;
+}
+
+
+/* Style the slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: 0 auto;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 40%;
+}
+
+.prev,
+.next {
+    display: none;
+    position: absolute;
+    width: 50%;
+    top: 150px;
+    height: 230px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;   
+    font-size: 30px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+#portfolio .card:hover  .prev ,#portfolio .card:hover  .next {
+    display: block;
+}
+#skill {
+    padding-top: 60px;
+    transition: transform 0.5s ease;
+    height: 100vh;
+}
+
+#skill .card {
+    opacity: 0;
+
+    color: var(--white);
+    padding: 1em;
+    position: block;
+    overflow: hidden;
+    border-radius: 1%;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+#skill .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#skill .card:hover {
+    transform: scale(1.004);
+}
+
+#skill .card:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+#skill .card h3 {
+    position: relative;
+    overflow: hidden;
+}
+
+#skill .card h3::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+#skill .card:hover h3::after {
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    width: 100%;
+    left: 0;
+}
+/* Keyframes for moving from edges to center */
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for moving back to edges */
+@keyframes slideToLeft {
+    from {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%) translateY(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideToRight {
+    from {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%) translateY(20px);
+        opacity: 0;
+    }
+}
+.skill-item {
+    opacity: 0;
+    position: relative;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#skill .card .skill-item {
+    transition: 0.3s ease;
+}
+
+#skill .card .skill-item:hover {
+    transform: scale(1.2);
+    font-size: x-large;
+    color: var(--bg-dark);
+    font-weight: bolder;
+    text-shadow: 0 0 5px var(--clr-neon), 0 0 10px var(--clr-neon);
+}
+.skill-item:nth-child(odd) {
+    animation-name: slideFromLeft;
+}
+
+.skill-item:nth-child(even) {
+    animation-name: slideFromRight;
+}
+
+/* When skill items become visible */
+.skill-item.visibleItem {
+    animation-name: slideFromLeft, slideFromRight; /* Initial animations */
+}
+
+/* When skill items are not visible */
+.skill-item:not(.visibleItem) {
+    animation-name: slideToLeft, slideToRight; /* Exit animations */
+}
+
+#highlights {
+    padding-top: 60px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+#highlights .card {
+    box-shadow: 0 0 1em -0.3em var(--white);
+    color: var(--white);
+    padding: 1em 2em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    /* Smooth scaling */
+}
+
+#highlights:hover .card {
+    font-size: 14px;
+}
+#highlights .HighLightsImgDiv {
+    background-color: var(--bg-dark);
+    padding: 5% 2%;
+    display: flex;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    transition: 0.8s ease;
+}
+#highlights:hover .HighLightsImgDiv {
+    background-color: var(--bg-black);
+    transform: scale(1.3) rotate(5deg);
+    height: normal;
+}
+.HighLightsImgDiv {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.HighLightsImgDiv .circle-bg {
+    background-color: #4b367c;
+    border-radius: 50%;
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.HighLightsImgDiv img {
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    position: relative;
+    z-index: 2;
+    top: -23.5px;
+}
+.HighLightsDiv {
+    font-weight: normal;
+    backdrop-filter: blur(10px);
+    z-index: 3;
+}
+
+.modal-body {
+    color: #fff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://wallpaperaccess.com/full/4230684.jpg");
+    background-position: 45% -2%;
+    background-size: 70%;
+    background-position: center;
+}
+
+.modal .modal-header i {
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .head-nav .head-title {
+        z-index: 99999;
+    }
+    .head-nav button {
+        display: block;
+        z-index: 99999;
+    }
+
+    .head-nav-list {
+        opacity: 0;
+        width: 100%;
+        height: 50px;
+        top: 0;
+        right: 10px;
+        position: fixed;
+        background-color: var(--bg-dark);
+        transition: 0.3s all;
+        align-self: flex-end;
+        border-radius: 0 0 100% 100%;
+        padding: 0;
+        padding-right: 0rem;
+    }
+    .head-nav-list.activeItemList {
+        opacity: 1;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        background-color: var(--bg-dark);
+        width: 100%;
+        height: max-content;
+        padding: 20%;
+    }
+    .head-nav-list a {
+        display: none;
+    }
+    .head-nav-list.activeItemList a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .head-nav i {
+        display: block;
+        color: var(--clr-neon);
+    }
+    .head-nav i:active {
+        color: var(--white);
+    }
+
+    #profile {
+        background-size: cover;
+        background-position: -20% -10%;
+    }
+    #profile .pad {
+        padding: 10px;
+    }
+    #profile h1 {
+        font-size: 40px;
+    }
+    #profile img {
+        width: 350px;
+        height: 350px;
+    }
+
+    #profile img:hover {
+        transform: scale(1.1) rotate(5deg);
+    }
+    #portfolio .row {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    #portfolio .pf {
+        margin: 10px;
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    #portfolio img {
+        height: 150px;
+        width: 150px;
+    }
+}

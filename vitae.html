@@ -1,0 +1,282 @@
+<html>
+
+<head>
+    <title>
+        Curriculum Vitae
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-size: 12px;
+        }
+
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        img {
+            border-radius: 10%;
+
+            width: 180px;
+            height: 180px;
+            margin-right: 20px;
+        }
+
+        img::after {}
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+
+        .section .label {
+            font-weight: bold;
+        }
+
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills-table th,
+        .skills-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .skills-table th {
+            background-color: #f4f4f4;
+        }
+
+        .btn {
+            display: block;
+            position: fixed;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn btn-primary px-5 py-3" onclick="printDiv()">Print Curriculum Vitae</button>
+
+    <div contenteditable id="printDiv" class="container">
+        <div class="header">
+            <h1 class="text-center">
+                Curriculum Vitae
+            </h1>
+        </div>
+        <div class="section">
+            <h2>
+                PERSONAL
+            </h2>
+            <div class="d-flex">
+                <div class="w-50">
+                    <p>
+                        <span class="label">
+                            Name:
+                        </span>
+                        Gilmark Paungilan
+                    </p>
+                    <p>
+                        <span class="label">
+                            Address:
+                        </span>
+                        Poblacion Public Market, 9411 Libungan
+                    </p>
+                    <p>
+                        <span class="label">
+                            Phone number:
+                        </span>
+                        09760014513
+                    </p>
+                    <p>
+                        <span class="label">
+                            Email:
+                        </span>
+                        gilmarkpaungilan@gmail.com
+                    </p>
+                    <p>
+                        <span class="label">
+                            Date of birth:
+                        </span>
+                        29-06-1997
+                    </p>
+                    <p>
+                        <span class="label">
+                            Place of birth:
+                        </span>
+                        Poblacion Libungan North Cotabato
+                    </p>
+                    <p>
+                        <span class="label">
+                            Gender:
+                        </span>
+                        Male
+                    </p>
+                    <p>
+                        <span class="label">
+                            Nationality:
+                        </span>
+                        Filipino
+                    </p>
+                    <p>
+                        <span class="label">
+                            Marital status:
+                        </span>
+                        Single
+                    </p>
+                </div>
+                <div class="w-50 d-flex justify-content-center align-items-center ">
+                    <img alt="Profile picture of a person" height="144" src="images/kinggil_photo.jpg" width="80" />
+                </div>
+
+            </div>
+
+        </div>
+        <div class="section">
+            <h2>
+                RESUME OBJECTIVE
+            </h2>
+            <p>
+                I'm a web developer with 1 year of experience in Laravel. I'm excited to keep learning and growing my skills. I look forward to learning more about web development and using that knowledge to build easy-to-use web applications.
+            </p>
+        </div>
+        <div class="section">
+            <h2>
+                WORK EXPERIENCE
+            </h2>
+            <p>
+                <span class="label">
+                    September 2017 - March 2018:
+                </span>
+                Security Guard
+            </p>
+            <p>
+                Trigger Fist Agency, Bansalan Davao Del Sur
+            </p>
+            <p>
+                <span class="label">
+                    May 2018 - December 2018:
+                </span>
+                Factory Canning (Philbest Corp.)
+            </p>
+            <p>
+                Sunline Agency, General Santos City South Cotabato
+            </p>
+        </div>
+        <div class="section">
+            <h2>
+                EDUCATION AND QUALIFICATIONS
+            </h2>
+            <p>
+                <span class="label">
+                    Aug 2019 - Jun 2023:
+                </span>
+                BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY
+            </p>
+            <p>
+                Southern Christian College, Midsayap, North Cotabato, Philippines
+            </p>
+        </div>
+        <div class="section">
+            <h2>
+                INTERESTS
+            </h2>
+            <p>
+                Programming, Dancing, Listening Music
+            </p>
+        </div>
+        <div class="section">
+            <h2>
+                REFERENCES
+            </h2>
+            <div class="d-flex justify-content-between">
+                <span class="label w-50">
+                    Jomar B. Daul
+                </span>
+                <p class="w-50">
+                    +639463703630
+                </p>
+                <p class="w-50">
+                    Southern Christian College
+                </p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="label w-50 ">
+                    Michael John D. Concepcion
+                </span>
+                <p class="w-50">
+                    +639123123123
+                </p>
+                <p class="w-50">
+                    Southern Christian College
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>
+                SKILLS
+            </h2>
+            <ul>
+                <li>Laravel Web development (Experience Level) </li>
+                <li>Android Java development (Intermediate Level) </li>
+            </ul>
+
+        </div>
+    </div>
+    <script>
+        function printDiv() {
+            var printContents = document.getElementById('printDiv').innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+
+            $('#printingModal').modal('show');
+            setTimeout(() => {
+                if (window !== window.parent) {
+                    window.parent.location.href = '/hr/leave';
+                } else {
+                    window.location.href = '/hr/leave';
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
