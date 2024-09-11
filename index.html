@@ -1,365 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ asset('css/kinggil/portfolio.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/portfolio.css" />
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- JQUERY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <title>Document</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="head-nav">
-        <h2 class="head-title text-nowrap"><span>My</span> Portfolio</h2>
+      <h2 class="head-title text-nowrap"><span>My</span> Portfolio</h2>
 
-        <button class="btn btn-transparent p-2" onclick="navListActive()">
-            <i class="fas fa-dragon"></i>
-        </button>
-        <div class="d-flex justify-content-end  h-100 w-100" style="display:block; position: fixed;  z-index: 1;" onclick="navListActive()">
-            <div class="head-nav-list">
-                <a href="#profile" class="nav-a">Profile</a>
-                <a href="#portfolio" class="nav-a">Portfolio</a>
-                <a href="#highlights" class="nav-a">About Me</a>
-                <a href="#skill" class="nav-a">Skill Summary</a>
-                <a class="neon-button px-5" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me</a>
-            </div>
+      <button class="btn btn-transparent p-2" onclick="navListActive()">
+        <i class="fas fa-dragon"></i>
+      </button>
+      <div
+        class="d-flex justify-content-end h-100 w-100"
+        style="display: block; position: fixed; z-index: 1"
+        onclick="navListActive()"
+      >
+        <div class="head-nav-list">
+          <a href="#profile" class="nav-a">Profile</a>
+          <a href="#portfolio" class="nav-a">Portfolio</a>
+          <a href="#highlights" class="nav-a">About Me</a>
+          <a href="#skill" class="nav-a">Skill Summary</a>
+          <a
+            class="neon-button px-5"
+            data-bs-toggle="modal"
+            data-bs-target="#contactModal"
+            >Contact Me</a
+          >
         </div>
+      </div>
     </div>
 
-
     <section id="profile" class="shadow-lg">
-        <div class="row m-0">
-            <div class="col-lg-6 mb-2 d-flex justify-content-center align-items-center">
-                <div class="pad">
-                    <p class="mb-0 text-lg">Hello, my name is</p>
-                    <h1>Gilmark L. <span>Paungilan</span></h1>
-                    <p class="mb-0 text-lg text-end">I'am a Web Developer</p>
-                    <div class="email-container">
-                        <input id="letStart" type="email" placeholder="Enter Your Email">
-                        <button class="text-nowrap p-2" onclick="openContact()" data-bs-toggle="modal" data-bs-target="#contactModal">Let's Start</button>
-                    </div>
-                    <script>
-                        function openContact() {
-                            $('#email').val($('#letStart').val());
-                        }
-                    </script>
-                </div>
+      <div class="row m-0">
+        <div
+          class="col-lg-6 mb-2 d-flex justify-content-center align-items-center"
+        >
+          <div class="pad">
+            <p class="mb-0 text-lg">Hello, my name is</p>
+            <h1>Gilmark L. <span>Paungilan</span></h1>
+            <p class="mb-0 text-lg text-end">I'am a Web Developer</p>
+            <div class="email-container">
+              <input
+                id="letStart"
+                type="email"
+                placeholder="Enter Your Email"
+              />
+              <button
+                class="text-nowrap p-2"
+                onclick="openContact()"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+              >
+                Let's Start
+              </button>
             </div>
-            <div class="col-lg-6">
-                <img src="/kinggil_nobg.png" alt="">
-            </div>
+            <script>
+              function openContact() {
+                $("#email").val($("#letStart").val());
+              }
+            </script>
+          </div>
         </div>
+        <div class="col-lg-6">
+          <img src="images/kinggil_nobg.png" alt="" />
+        </div>
+      </div>
     </section>
     <section id="portfolio">
-        <h3 class="text-center">Portfolio</h3>
-        <div class=" wrapper ">
-            <div class="card card1">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="/kinggil_hrleave1.png">
-                        <img src="/kinggil_hrleave2.png">
-                        <img src="/kinggil_hrleave3.png">
-                        <img src="/kinggil_hrleave4.png">
-                        <img src="/kinggil_hrleave5.png">
-                        <img src="/kinggil_hrleave6.png">
-                        <img src="/kinggil_hrleave7.png">
-
-                    </div>
-                    <button class="prev text-start" onclick="plusSlides(-1)">
-                        &lt;
-                    </button>
-                    <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
-                </div>
-                <h4 class="text-center">SCC Employee Leave Application</h4>
+      <h3 class="text-center">Portfolio</h3>
+      <div class="wrapper">
+        <div class="card card1">
+          <div class="slider-container">
+            <div class="slider">
+              <img src="images/kinggil_hrleave1.png" />
+              <img src="images/kinggil_hrleave2.png" />
+              <img src="images/kinggil_hrleave3.png" />
+              <img src="images/kinggil_hrleave4.png" />
+              <img src="images/kinggil_hrleave5.png" />
+              <img src="images/kinggil_hrleave6.png" />
+              <img src="images/kinggil_hrleave7.png" />
             </div>
-            <div class="card card2">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="/kinggil_queing1.png">
-                        <img src="/kinggil_queing2.png">
-                        <img src="/kinggil_queing3.png">
-                    </div>
-                    <button class="prev text-start" onclick="plusSlides(-1)">
-                        &lt;
-                    </button>
-                    <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
-                </div>
-                <h4 class="text-center">SCC Finance Queing Web App</h4>
-            </div>
-            <div class="card card3">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="/kinggil_queing1.png" alt="Image 1">
-                        <img src="/kinggil_queing2.png" alt="Image 2">
-                        <img src="/kinggil_queing3.png" alt="Image 3">
-                    </div>
-                    <button class="prev text-start" onclick="plusSlides(-1)">
-                        &lt;
-                    </button>
-                    <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
-                </div>
-                <h4 class="text-center">Lorem Ipsum Text</h4>
-            </div>
-            <div class="card card4">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="/kinggil_queing1.png" alt="Image 1">
-                        <img src="/kinggil_queing2.png" alt="Image 2">
-                        <img src="/kinggil_queing3.png" alt="Image 3">
-                    </div>
-                    <button class="prev text-start" onclick="plusSlides(-1)">
-                        &lt;
-                    </button>
-                    <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
-                </div>
-                <h4 class="text-center">Lorem Ipsum Text</h4>
-            </div>
+            <button class="prev text-start" onclick="plusSlides(-1)">
+              &lt;
+            </button>
+            <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
+          </div>
+          <h4 class="text-center">SCC Employee Leave Application</h4>
         </div>
-        div
-        <button class="w-100 btn btn-transparent mb-5 medButt" >Close</button>
+        <div class="card card2">
+          <div class="slider-container">
+            <div class="slider">
+              <img src="images/kinggil_queing1.png" />
+              <img src="images/kinggil_queing2.png" />
+              <img src="images/kinggil_queing3.png" />
+            </div>
+            <button class="prev text-start" onclick="plusSlides(-1)">
+              &lt;
+            </button>
+            <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
+          </div>
+          <h4 class="text-center">SCC Finance Queing Web App</h4>
+        </div>
+        <div class="card card3">
+          <div class="slider-container">
+            <div class="slider">
+              <img src="images/kinggil_queing1.png" alt="Image 1" />
+              <img src="images/kinggil_queing2.png" alt="Image 2" />
+              <img src="images/kinggil_queing3.png" alt="Image 3" />
+            </div>
+            <button class="prev text-start" onclick="plusSlides(-1)">
+              &lt;
+            </button>
+            <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
+          </div>
+          <h4 class="text-center">Lorem Ipsum Text</h4>
+        </div>
+        <div class="card card4">
+          <div class="slider-container">
+            <div class="slider">
+              <img src="images/kinggil_queing1.png" alt="Image 1" />
+              <img src="images/kinggil_queing2.png" alt="Image 2" />
+              <img src="images/kinggil_queing3.png" alt="Image 3" />
+            </div>
+            <button class="prev text-start" onclick="plusSlides(-1)">
+              &lt;
+            </button>
+            <button class="next text-end" onclick="plusSlides(1)">&gt;</button>
+          </div>
+          <h4 class="text-center">Lorem Ipsum Text</h4>
+        </div>
+      </div>
+      div
+      <button class="w-100 btn btn-transparent mb-5 medButt">Close</button>
     </section>
 
     <section id="highlights">
-        <div class="card bg-transparent m-2">
-            <div class="row">
-                <div class="col-lg-5 HighLightsImgDiv">
-                    <div class="circle-bg"></div>
-                    <img alt="Woman eating salad" height="170" src="/kinggil_nobg.png" width="170" />
-                </div>
-                <div class="col-lg-7 HighLightsDiv">
-                    <h3 class="text-center">About Me</h3>
-                    <p class="p-3 text-center mb-0 text-light">
-                        Website Administrator and Web App Developer<br>
-                        Android App Developer<br>
-                        Web Designer<br>
-                    </p>
-                    <h5 class="mb-0 text-center">Career Highlights</h5>
-                    <p class="p-3 text-center mb-0 text-light">
-                        Southern Christian College Website Administrator and Web App Full Stack Developer
-                    </p>
-                    <h5 class="mb-0 text-center">Key Achievements</h5>
-                    <p class="p-3 text-center mb-0 text-light">
-                        Grocery Point of Sale (Offline Web App) <br>
-                        Employee Leave File <br>
-                        HR Employee Leave Administrator <br>
-                        Queing Web App <br>
-                        ESC Applications (Front End Only) <br>
-                        Online Enrollment Registration (Sr. Dev Support) <br>
-                    </p>
-                    <div class="d-flex justify-content-center">
-                        <a href="#contact" class="neon-button px-5" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me</a>
-                    </div>
-                </div>
-
+      <div class="card bg-transparent m-2">
+        <div class="row">
+          <div class="col-lg-5 HighLightsImgDiv">
+            <div class="circle-bg"></div>
+            <img
+              alt="Woman eating salad"
+              height="170"
+              src="images/kinggil_nobg.png"
+              width="170"
+            />
+          </div>
+          <div class="col-lg-7 HighLightsDiv">
+            <h3 class="text-center">About Me</h3>
+            <p class="p-3 text-center mb-0 text-light">
+              Website Administrator and Web App Developer<br />
+              Android App Developer<br />
+              Web Designer<br />
+            </p>
+            <h5 class="mb-0 text-center">Career Highlights</h5>
+            <p class="p-3 text-center mb-0 text-light">
+              Southern Christian College Website Administrator and Web App Full
+              Stack Developer
+            </p>
+            <h5 class="mb-0 text-center">Key Achievements</h5>
+            <p class="p-3 text-center mb-0 text-light">
+              Grocery Point of Sale (Offline Web App) <br />
+              Employee Leave File <br />
+              HR Employee Leave Administrator <br />
+              Queing Web App <br />
+              ESC Applications (Front End Only) <br />
+              Online Enrollment Registration (Sr. Dev Support) <br />
+            </p>
+            <div class="d-flex justify-content-center">
+              <a
+                href="#contact"
+                class="neon-button px-5"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+                >Contact Me</a
+              >
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" data-bs-backdrop="static" aria-hidden="true" style="backdrop-filter: blur(10px);">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content bg-blue-gradient">
-                <div class="modal-header py-1 bg-dark">
-                    <h6 class="m-0 text-light">Contact Me</h6>
-                    <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-                <div class="modal-body d-flex flex-column gap-2">
-                    <div class="row px-5">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="text-uppercase ">Contact Me</h2>
-                            <h5 class="">Using Number: <span>+63 976 001 4513</span> / Send Me a Message:</h5>
-                        </div>
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      data-bs-backdrop="static"
+      aria-hidden="true"
+      style="backdrop-filter: blur(10px)"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-blue-gradient">
+          <div class="modal-header py-1 bg-dark">
+            <h6 class="m-0 text-light">Contact Me</h6>
+            <button
+              class="btn btn-transparent text-white m-0"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="modal-body d-flex flex-column gap-2">
+            <div class="row px-5">
+              <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase">Contact Me</h2>
+                <h5 class="">
+                  Using Number: <span>+63 976 001 4513</span> / Send Me a
+                  Message:
+                </h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <form id="contactForm" name="contactForm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group mb-3">
+                        <input
+                          id="name"
+                          class="form-control"
+                          type="text"
+                          placeholder="Your Name *"
+                          required
+                        />
+                        <small
+                          class="form-text text-danger flex-grow-1 lead"
+                        ></small>
+                      </div>
+                      <div class="form-group mb-3">
+                        <input
+                          id="email"
+                          class="form-control"
+                          type="email"
+                          placeholder="Your Email *"
+                          required
+                        />
+                        <small
+                          class="form-text text-danger flex-grow-1 lead"
+                        ></small>
+                      </div>
+                      <div class="form-group mb-3">
+                        <input
+                          class="form-control"
+                          type="tel"
+                          placeholder="Your Phone *"
+                          required
+                        />
+                        <small class="form-text text-danger lead"></small>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form id="contactForm" name="contactForm">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3">
-                                            <input id="name" class="form-control" type="text" placeholder="Your Name *" required />
-                                            <small class="form-text text-danger flex-grow-1 lead"></small>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <input id="email" class="form-control" type="email" placeholder="Your Email *" required />
-                                            <small class="form-text text-danger flex-grow-1 lead"></small>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <input class="form-control" type="tel" placeholder="Your Phone *" required />
-                                            <small class="form-text text-danger lead"></small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mb-3"><textarea id="message" class="form-control" placeholder="Your Message *" required></textarea><small class="form-text text-danger lead"></small></div>
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-lg-12 text-center">
-                                        <div id="success"></div><button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="col-md-6">
+                      <div class="form-group mb-3">
+                        <textarea
+                          id="message"
+                          class="form-control"
+                          placeholder="Your Message *"
+                          required
+                        ></textarea
+                        ><small class="form-text text-danger lead"></small>
+                      </div>
                     </div>
-                </div>
-                <div class="modal-footer bg-dark">
-
-                    <div class="w-100 text-white">
-                        <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal">
-                            <a href="https://www.facebook.com/nadah.way2" class=" text-white">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
-                        </button>
-                        <button class="btn btn-transparent m-0" data-bs-dismiss="modal">
-                            <a href="" class=" text-white">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                        </button>
-                        <!-- <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal">
+                    <div class="w-100"></div>
+                    <div class="col-lg-12 text-center">
+                      <div id="success"></div>
+                      <button
+                        id="sendMessageButton"
+                        class="btn btn-primary btn-xl text-uppercase"
+                        type="submit"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-dark">
+            <div class="w-100 text-white">
+              <button
+                class="btn btn-transparent text-white m-0"
+                data-bs-dismiss="modal"
+              >
+                <a
+                  href="https://www.facebook.com/nadah.way2"
+                  class="text-white"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </button>
+              <button class="btn btn-transparent m-0" data-bs-dismiss="modal">
+                <a href="" class="text-white">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </button>
+              <!-- <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal">
                             <i class="fa-brands fa-instagram"></i>
                         </button> -->
-                        <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal">
-                            <i class="fa-brands fa-telegram"></i>
-                        </button>
-                        <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal">
-                            <i class="fa-brands fa-github"></i>
-                        </button>
-                        <button class="btn btn-transparent text-white m-0" data-bs-dismiss="modal">
-                            <a href="https://www.linkedin.com/in/gilmark-paungilan-a21788325/" class=" text-white">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </button>
-                    </div>
-                </div>
+              <button
+                class="btn btn-transparent text-white m-0"
+                data-bs-dismiss="modal"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </button>
+              <button
+                class="btn btn-transparent text-white m-0"
+                data-bs-dismiss="modal"
+              >
+                <i class="fa-brands fa-github"></i>
+              </button>
+              <button
+                class="btn btn-transparent text-white m-0"
+                data-bs-dismiss="modal"
+              >
+                <a
+                  href="https://www.linkedin.com/in/gilmark-paungilan-a21788325/"
+                  class="text-white"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-
-
     <section id="skill">
-        <div class="card bg-transparent m-2">
-            <h3 class="text-center">Skill Summary</h3>
-            <div class="row d-flex justify-content-center">
-                <div class="col">
-                    <p class="text-nowrap text-center shadow rounded bg-dark p-2">Full Stack Web Developer</p>
-                </div>
-                <div class="col">
-                    <p class="text-nowrap text-center shadow rounded bg-dark p-2">Theme Customization</p>
-                </div>
-                <div class="col">
-                    <p class="text-nowrap text-center shadow rounded bg-dark p-2">Android Java Developer (Side Skill)</p>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">Laravel</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">HTML</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">JavaScript</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">PHP</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">Bootstrap</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">MySQL</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">Java</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2">XML</div>
-                <div class="skill-item col-lg-5 border border-white rounded p-5 d-none justify-content-center align-items-center m-2">Firebase</div>
-            </div>
+      <div class="card bg-transparent m-2">
+        <h3 class="text-center">Skill Summary</h3>
+        <div class="row d-flex justify-content-center">
+          <div class="col">
+            <p class="text-nowrap text-center shadow rounded bg-dark p-2">
+              Full Stack Web Developer
+            </p>
+          </div>
+          <div class="col">
+            <p class="text-nowrap text-center shadow rounded bg-dark p-2">
+              Theme Customization
+            </p>
+          </div>
+          <div class="col">
+            <p class="text-nowrap text-center shadow rounded bg-dark p-2">
+              Android Java Developer (Side Skill)
+            </p>
+          </div>
         </div>
+        <div class="row d-flex justify-content-center">
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            Laravel
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            HTML
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            JavaScript
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            PHP
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            Bootstrap
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            MySQL
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            Java
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-flex justify-content-center align-items-center m-2"
+          >
+            XML
+          </div>
+          <div
+            class="skill-item col-lg-5 border border-white rounded p-5 d-none justify-content-center align-items-center m-2"
+          >
+            Firebase
+          </div>
+        </div>
+      </div>
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const card = document.querySelector('#skill .card');
-            const skillItems = document.querySelectorAll('#skill .skill-item');
+      document.addEventListener("DOMContentLoaded", () => {
+        const card = document.querySelector("#skill .card");
+        const skillItems = document.querySelectorAll("#skill .skill-item");
 
-            function checkVisibility() {
-                const rect = card.getBoundingClientRect();
-                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        function checkVisibility() {
+          const rect = card.getBoundingClientRect();
+          const windowHeight =
+            window.innerHeight || document.documentElement.clientHeight;
 
-                if (rect.top <= windowHeight && rect.bottom >= 0) {
-                    card.classList.add('visible');
-                } else {
-                    card.classList.remove('visible');
-                }
+          if (rect.top <= windowHeight && rect.bottom >= 0) {
+            card.classList.add("visible");
+          } else {
+            card.classList.remove("visible");
+          }
 
-                skillItems.forEach((item, index) => {
-                    const itemRect = item.getBoundingClientRect();
+          skillItems.forEach((item, index) => {
+            const itemRect = item.getBoundingClientRect();
 
-                    if (itemRect.top <= windowHeight && itemRect.bottom >= 0) {
-                        setTimeout(() => {
-                            item.classList.add('visibleItem');
-                        }, index * 100); // Staggered delay
-                    } else {
-                        item.classList.remove('visibleItem');
-                    }
-                });
-            }
-
-            checkVisibility();
-            window.addEventListener('scroll', checkVisibility);
-        });
-
-        function navListActive() {
-            const navList = document.querySelector('.head-nav-list');
-
-            if (navList.classList.contains('activeItemList')) {
-                navList.classList.remove('activeItemList');
+            if (itemRect.top <= windowHeight && itemRect.bottom >= 0) {
+              setTimeout(() => {
+                item.classList.add("visibleItem");
+              }, index * 100); // Staggered delay
             } else {
-                navList.classList.add('activeItemList');
+              item.classList.remove("visibleItem");
             }
+          });
         }
 
+        checkVisibility();
+        window.addEventListener("scroll", checkVisibility);
+      });
 
+      function navListActive() {
+        const navList = document.querySelector(".head-nav-list");
 
-
-
-
-
-
-
-        let sliderContainers = document.querySelectorAll('.slider-container');
-
-        let currentSlides = new Array(sliderContainers.length).fill(0);
-
-        function plusSlides(n, sliderIndex) {
-            currentSlides[sliderIndex] += n;
-            if (currentSlides[sliderIndex] >= sliderContainers[sliderIndex].querySelectorAll('.slider img').length) {
-                currentSlides[sliderIndex] = 0;
-            } else if (currentSlides[sliderIndex] < 0) {
-                currentSlides[sliderIndex] = sliderContainers[sliderIndex].querySelectorAll('.slider img').length - 1;
-            }
-            showSlide(sliderIndex);
+        if (navList.classList.contains("activeItemList")) {
+          navList.classList.remove("activeItemList");
+        } else {
+          navList.classList.add("activeItemList");
         }
+      }
 
-        function showSlide(sliderIndex) {
-            let images = sliderContainers[sliderIndex].querySelectorAll('.slider img');
-            for (let i = 0; i < images.length; i++) {
-                images[i].style.display = 'none';
-            }
-            images[currentSlides[sliderIndex]].style.display = 'block';
-        }
+      let sliderContainers = document.querySelectorAll(".slider-container");
 
-        for (let i = 0; i < sliderContainers.length; i++) {
-            showSlide(i);
-        }
+      let currentSlides = new Array(sliderContainers.length).fill(0);
 
-        let prevButtons = document.querySelectorAll('.prev');
-        let nextButtons = document.querySelectorAll('.next');
-        for (let i = 0; i < prevButtons.length; i++) {
-            prevButtons[i].onclick = function() {
-                plusSlides(-1, i);
-            };
-            nextButtons[i].onclick = function() {
-                plusSlides(1, i);
-            };
+      function plusSlides(n, sliderIndex) {
+        currentSlides[sliderIndex] += n;
+        if (
+          currentSlides[sliderIndex] >=
+          sliderContainers[sliderIndex].querySelectorAll(".slider img").length
+        ) {
+          currentSlides[sliderIndex] = 0;
+        } else if (currentSlides[sliderIndex] < 0) {
+          currentSlides[sliderIndex] =
+            sliderContainers[sliderIndex].querySelectorAll(".slider img")
+              .length - 1;
         }
+        showSlide(sliderIndex);
+      }
+
+      function showSlide(sliderIndex) {
+        let images =
+          sliderContainers[sliderIndex].querySelectorAll(".slider img");
+        for (let i = 0; i < images.length; i++) {
+          images[i].style.display = "none";
+        }
+        images[currentSlides[sliderIndex]].style.display = "block";
+      }
+
+      for (let i = 0; i < sliderContainers.length; i++) {
+        showSlide(i);
+      }
+
+      let prevButtons = document.querySelectorAll(".prev");
+      let nextButtons = document.querySelectorAll(".next");
+      for (let i = 0; i < prevButtons.length; i++) {
+        prevButtons[i].onclick = function () {
+          plusSlides(-1, i);
+        };
+        nextButtons[i].onclick = function () {
+          plusSlides(1, i);
+        };
+      }
     </script>
-</body>
-
+  </body>
 </html>
