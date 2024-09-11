@@ -186,7 +186,11 @@ span {
 #portfolio {
     padding-top: 60px;
     position: relative;
-    transition: transform 0.5s ease;
+    transition: 0.5s ease;
+    height: 335px;
+}
+#portfolio:hover {
+    height: 550px;
 }
 #portfolio .wrapper {
     display: flex;
@@ -283,7 +287,6 @@ span {
     position: fixed;
 }
 
-
 /* Style the slider container */
 .slider-container {
     position: relative;
@@ -307,7 +310,7 @@ span {
     height: 230px;
     transform: translateY(-50%);
     background-color: transparent;
-    border: none;   
+    border: none;
     font-size: 30px;
 }
 
@@ -318,7 +321,8 @@ span {
 .next {
     right: 0;
 }
-#portfolio .card:hover  .prev ,#portfolio .card:hover  .next {
+#portfolio .card:hover .prev,
+#portfolio .card:hover .next {
     display: block;
 }
 #skill {
@@ -533,6 +537,10 @@ span {
 .modal .modal-header i {
     cursor: pointer;
 }
+
+.medButt {
+    display: none;
+}
 @media (max-width: 768px) {
     .head-nav .head-title {
         z-index: 99999;
@@ -596,22 +604,46 @@ span {
         width: 350px;
         height: 350px;
     }
-
+    #highlights:hover .HighLightsImgDiv {
+        margin-top: 60px;
+    }
     #profile img:hover {
         transform: scale(1.1) rotate(5deg);
     }
-    #portfolio .row {
-        flex-direction: row;
-        overflow-x: auto;
+    #portfolio {
+        padding-top: 30px;
+        z-index: 5;
+    }
+    #portfolio .wrapper {
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+    }
+    #portfolio:hover  .medButt {
+
+            display: block;
+            backdrop-filter: blur(10px);
+            border: 2px double red;
+            color: var(--white);
+    }
+  
+    #portfolio .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #portfolio .slider-container {
+        width: 100%;
+    }
+    #portfolio .slider {
+        height: 200px;
+    }
+    .prev,
+    .next {
+        display: none;
+    }
+    #portfolio .card:hover .prev,
+    #portfolio .card:hover .next {
+        display: block;
     }
 
-    #portfolio .pf {
-        margin: 10px;
-        flex: 0 0 auto;
-        width: 75%;
-    }
-    #portfolio img {
-        height: 150px;
-        width: 150px;
-    }
+    
 }
