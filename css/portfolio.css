@@ -619,7 +619,6 @@ span {
         backdrop-filter: blur(10px);
     }
     #portfolio:hover  .medButt {
-
             display: block;
             backdrop-filter: blur(10px);
             border: 2px double red;
